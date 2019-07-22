@@ -1,0 +1,79 @@
+{
+	"name": "px2upx",
+	"displayName": "px2upx",
+	"description": "px to upx",
+	"publisher": "cnhekai",
+	"version": "0.0.3",
+	"engines": {
+		"vscode": "^1.36.0"
+	},
+	"categories": [
+		"Other"
+	],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/cnhekai/px2upx"
+  },
+	"activationEvents": [
+    "onLanguage:html",
+    "onLanguage:vue",
+    "onLanguage:css",
+    "onLanguage:less",
+    "onLanguage:scss",
+    "onLanguage:sass",
+    "onLanguage:stylus",
+		"onCommand:extension.px2upxAll"
+	],
+	"main": "./out/extension.js",
+	"contributes": {
+		"commands": [
+			{
+				"command": "extension.px2upx",
+				"title": "px2upx"
+			},
+			{
+				"command": "extension.px2upxAll",
+				"title": "px2upxAll"
+			}
+		],
+		"configuration": {
+			"type": "object",
+			"title": "px2upx",
+			"properties": {
+				"px2upx.designWidth": {
+					"type": "number",
+					"default": 375,
+					"description": "design width (unit: px), default: 375"
+				},
+				"px2upx.fitWidth": {
+					"type": "number",
+					"default": 750,
+					"description": "fit width (unit: px), default: 750"
+				},
+				"px2upx.fixedDigits": {
+					"type": "number",
+					"default": 2,
+					"description": "Px to rem decimal point maximum length, default: 2"
+				}
+			}
+		}
+	},
+	"scripts": {
+		"vscode:prepublish": "npm run compile",
+		"compile": "tsc -p ./",
+		"watch": "tsc -watch -p ./",
+		"pretest": "npm run compile",
+		"test": "node ./out/test/runTest.js"
+	},
+	"devDependencies": {
+		"@types/glob": "^7.1.1",
+		"@types/mocha": "^5.2.6",
+		"@types/node": "^10.12.21",
+		"@types/vscode": "^1.36.0",
+		"glob": "^7.1.4",
+		"mocha": "^6.1.4",
+		"typescript": "^3.3.1",
+		"tslint": "^5.12.1",
+		"vscode-test": "^1.0.0-next.0"
+	}
+}
