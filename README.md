@@ -6,4 +6,4 @@
 
 px和upx的换算关系是 `upx = px * (px2upx.fitWidth / px2upx.designWidth)`
 
-git地址: [https://github.com/cnhekai/px2upx]url(https://github.com/cnhekai/px2upx)
+git地址: [https://github.com/cnhekai/px2upx](https://github.com/cnhekai/px2upx)
